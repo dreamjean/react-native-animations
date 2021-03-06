@@ -9,9 +9,9 @@ import {
 } from "react-native-redash";
 import Svg, { Path } from "react-native-svg";
 
-import { calender, colors } from "../config";
+import calender from "./calender";
 
-const { H_FACTOR, V_FACTOR, SIZE } = calender;
+const { SIZE, V_FACTOR, H_FACTOR } = calender;
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 const Square = ({ progress }) => {
@@ -41,7 +41,7 @@ const Square = ({ progress }) => {
 
     return {
       d: serialize(path),
-      fill: colors.primary,
+      fill: "#7edab9",
     };
   });
 

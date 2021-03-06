@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 
-import { StickyShapes } from "../screens";
+import { StickyShapes } from "../screens/stickyShapes";
 
 const Stack = createStackNavigator();
 

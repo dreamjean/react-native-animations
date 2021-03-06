@@ -12,8 +12,8 @@ import Animated, {
 } from "react-native-reanimated";
 import { snapPoint } from "react-native-redash";
 
-import Square from "../components/Square";
-import { calender } from "../config";
+import calender from "./calender";
+import Square from "./Square";
 
 const { MAX_HEIGHT, MAX_BOX_HEIGHT, SIZE, width } = calender;
 
