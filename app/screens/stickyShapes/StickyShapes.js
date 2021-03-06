@@ -1,6 +1,8 @@
+import { AntDesign } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet } from "react-native";
 import { PanGestureHandler } from "react-native-gesture-handler";
+import { RectButton } from "react-native-gesture-handler";
 import Animated, {
   Extrapolate,
   interpolate,
@@ -17,7 +19,7 @@ import Square from "./Square";
 
 const { MAX_HEIGHT, MAX_BOX_HEIGHT, SIZE, width } = calender;
 
-const StickyShapes = () => {
+const StickyShapes = ({ navigation }) => {
   const isOnTop = useSharedValue(true);
   const sticked = useSharedValue(true);
   const sticking = useDerivedValue(() => withSpring(sticked.value ? 1 : 0));
@@ -62,17 +64,27 @@ const StickyShapes = () => {
   }));
 
   return (
-    <Animated.View style={[styles.container, container]}>
-      <PanGestureHandler onGestureEvent={onGestureEvent}>
-        <Animated.View style={[StyleSheet.absoluteFill, square]}>
-          <Square {...{ progress }} />
-        </Animated.View>
-      </PanGestureHandler>
-    </Animated.View>
+    <>
+      <RectButton style={styles.button} onPress={() => navigation.goBack()}>
+        <AntDesign name="doubleleft" size={25} color="cyan" />
+      </RectButton>
+      <Animated.View style={[styles.container, container]}>
+        <PanGestureHandler onGestureEvent={onGestureEvent}>
+          <Animated.View style={[StyleSheet.absoluteFill, square]}>
+            <Square {...{ progress }} />
+          </Animated.View>
+        </PanGestureHandler>
+      </Animated.View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
+  button: {
+    position: "absolute",
+    top: 30,
+    left: 20,
+  },
   container: {
     position: "absolute",
     left: (width - SIZE) / 2,
