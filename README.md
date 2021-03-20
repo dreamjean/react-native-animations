@@ -1,5 +1,5 @@
 # react-native-animations
-react native animation example
+react native animation exercises
 
 Sticky Shapes
 
