@@ -10,8 +10,13 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("Breathe")}
       />
       <Button
-        title="Reflectly"
+        title="ColorSelection"
         color="#FD9F9C"
+        onPress={() => navigation.navigate("ColorSelection")}
+      />
+      <Button
+        title="Reflectly"
+        color="#02CBD6"
         onPress={() => navigation.navigate("Reflectly")}
       />
       <Button
